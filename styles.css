@@ -737,7 +737,7 @@
   display: flex;
   justify-content: center;
   margin-left: 80px;
-  padding: 20px;
+  padding: 30px;
   width: 350px;
   max-height: 300px;
 }
@@ -754,6 +754,7 @@
   object-position: center;
   width: 100%;
   border-radius: 20px;
+  background-color: #F1E8C8;
 }
 
 .students-life-made-easy {
