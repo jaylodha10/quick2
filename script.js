@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Number animation logic
     const numbers = document.querySelectorAll('.number');
 
     const animateNumber = (numberElement, target) => {
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateNumber(); // Start the animation
     };
 
-    // Intersection Observer callback
+    // Intersection Observer callback for number animation
     const handleIntersect = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Create an Intersection Observer instance
+    // Create an Intersection Observer instance for numbers
     const observer = new IntersectionObserver(handleIntersect, {
         root: null, // Use the viewport as the root
         rootMargin: '0px',
@@ -48,4 +49,30 @@ document.addEventListener('DOMContentLoaded', () => {
     numbers.forEach(number => {
         observer.observe(number);
     });
+
+    // Floating button logic
+    const floatingBtn = document.querySelector('.floating-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuItems = mobileMenu.querySelectorAll('a');
+
+    if (floatingBtn) {
+        // Toggle mobile menu when floating button is clicked
+        floatingBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Close the menu when a user taps on a menu item
+        mobileMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // Close menu if clicked outside (optional enhancement)
+        document.addEventListener('click', (e) => {
+            if (!floatingBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.remove('open');
+            }
+        });
+    }
 });

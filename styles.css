@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 46px 0 74px;
   background-color: #FFFFED;
 }
 
@@ -16,14 +15,8 @@
   align-self: center;
   display: flex;
   width: 100%;
-  max-width: 1237px;
+  max-width: 1200px;
   flex-direction: column;
-}
-
-@media (max-width: 991px) {
-  .div {
-    max-width: 100%;
-  }
 }
 
 .div-2 {
@@ -43,12 +36,6 @@
   white-space: nowrap;
 }
 
-@media (max-width: 991px) {
-  .div-3 {
-    white-space: initial;
-  }
-}
-
 .div-4 {
   background-color: rgba(235, 0, 41, 1);
   display: flex;
@@ -63,21 +50,9 @@
   padding: 2px 9px;
 }
 
-@media (max-width: 991px) {
-  .div-4 {
-    white-space: initial;
-  }
-}
-
 .div-5 {
   display: flex;
   gap: 5px;
-}
-
-@media (max-width: 991px) {
-  .div-5 {
-    white-space: initial;
-  }
 }
 
 .quick-verse {
@@ -88,10 +63,11 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
-  margin-left: 60px;
+  margin-left: 80px;
 }
+
 .quick-verse .logo {
-  width: 34px; 
+  width: 34px;
   height: auto;
   margin-right: 10px;
 }
@@ -107,6 +83,7 @@
   top: 0;
   left: 0;
   background-color: #FFFFAD;
+  /* Updated background color */
   padding: 15px 30px;
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -133,6 +110,69 @@
   cursor: pointer;
 }
 
+/* Floating button on mobile */
+.floating-btn {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  background-color: rgba(235, 0, 41, 1);
+  /* Red button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  z-index: 1100;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Mobile Menu (hidden by default) */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #FFFFAD;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu a {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #252b42;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+
+  /* Hide navigation bar items and show floating button */
+  .nav-items {
+    display: none;
+  }
+
+  .floating-btn {
+    display: block;
+  }
+
+  .mobile-menu a {
+    font-size: 16px;
+    color: #252b42;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+/* When menu is open */
+.mobile-menu.open {
+  display: flex;
+}
+
 .div-100 {
   margin-top: -40px;
 }
@@ -143,27 +183,15 @@
   display: flex;
 }
 
-@media (max-width: 991px) {
-  .div-10 {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
-  }
-}
-
 .column {
   display: flex;
   flex-direction: column;
   line-height: normal;
   width: 700px;
   margin-top: 80px;
+
 }
 
-@media (max-width: 991px) {
-  .column {
-    width: 100%;
-  }
-}
 
 .div-11 {
   z-index: 10;
@@ -172,13 +200,6 @@
   flex-direction: column;
   font-family: Poppins, sans-serif;
 
-}
-
-@media (max-width: 991px) {
-  .div-11 {
-    max-width: 100%;
-    margin-top: 29px;
-  }
 }
 
 .indias-first-hyper-local-delivery-startup-for-educational-campuseses {
@@ -191,38 +212,17 @@
   line-height: 60px;
 }
 
-@media (max-width: 991px) {
-  .indias-first-hyper-local-delivery-startup-for-educational-campuseses {
-    max-width: 100%;
-    font-size: 40px;
-    line-height: 52px;
-  }
-}
-
-@media (max-width: 991px) {
-  .div-12 {
-    margin-right: 10px;
-  }
-}
-
 .div-13 {
   display: flex;
-  width: 478px;
-  margin-left: 38px;
+  width: 100%;
   align-items: start;
   font-size: 18px;
   color: rgba(255, 255, 255, 1);
   font-weight: 500;
   line-height: 1;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 20px;
   margin-top: 20px;
-}
-
-@media (max-width: 991px) {
-  .div-13 {
-    margin-top: 40px;
-  }
 }
 
 .get-started {
@@ -279,7 +279,6 @@
     opacity: 1;
   }
 }
-
 
 .btn {
   padding: 10px 16px;
@@ -380,7 +379,7 @@
   width: 25px;
   height: 25px;
   position: absolute;
-  left: 10px;
+  left: 6px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -389,38 +388,14 @@
   content: "Download on the";
   position: absolute;
   top: 5px;
-  left: 45px;
+  left: 40px;
   font-size: 10px;
   font-weight: 400;
 }
 
-@media (max-width: 991px) {
-  .column-2 {
-    width: 100%;
-  }
-}
-
 .img-4 {
   width: 38%;
-  
-}
-
-@media (max-width: 991px) {
-  .img-4 {
-    max-width: 100%;
-  }
-}
-
-
-
-
-
-@media (max-width: 991px) {
-  .div-15 {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
-  }
+  padding-top: 60px;
 }
 
 .column-3,
@@ -431,30 +406,12 @@
   width: 33%;
 }
 
-@media (max-width: 991px) {
-
-  .column-3,
-  .column-4,
-  .column-5 {
-    width: 100%;
-  }
-}
-
 .div-16,
 .div-17,
 .div-18 {
   display: flex;
   flex-direction: column;
   font-family: Poppins, sans-serif;
-}
-
-@media (max-width: 991px) {
-
-  .div-16,
-  .div-17,
-  .div-18 {
-    margin-top: 40px;
-  }
 }
 
 .orders-delivered,
@@ -550,35 +507,6 @@
   margin-top: 0px;
 }
 
-
-/* Responsive Styles */
-@media (max-width: 991px) {
-
-  .service-wrapper,
-  .features-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .service-column,
-  .feature-column {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .what-we-serve {
-    font-size: 40px;
-  }
-
-  .feature-title {
-    font-size: 20px;
-  }
-
-  .feature-description1 {
-    font-size: 16px;
-  }
-}
-
 /* Drone Section */
 
 .div-103 {
@@ -592,13 +520,6 @@
     sans-serif;
 }
 
-@media (max-width: 991px) {
-  .heading {
-    font-size: 40px;
-    margin: 40px 0 0 10px;
-  }
-}
-
 .div-33 {
   display: flex;
   width: 100%;
@@ -606,12 +527,6 @@
   gap: 40px 100px;
   flex-wrap: wrap;
   margin-left: 40px;
-}
-
-@media (max-width: 991px) {
-  .div-33 {
-    max-width: 100%;
-  }
 }
 
 .div-34 {
@@ -638,7 +553,6 @@
 }
 
 .building-a-greener-world {
-  margin-left: 20px;
   flex-basis: auto;
 }
 
@@ -647,13 +561,6 @@
   display: flex;
   margin-top: 38px;
   gap: 23px;
-
-}
-
-@media (max-width: 991px) {
-  .div-36 {
-    margin-top: 40px;
-  }
 }
 
 .div-37 {
@@ -663,13 +570,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
+  width: 36px;
+  height: 50px;
   padding: 0 9px;
 }
 
 .img-15 {
-  aspect-ratio: 1.07;
+  aspect-ratio: 0.96;
   object-fit: contain;
   object-position: center;
   width: 32px;
@@ -691,12 +598,6 @@
   gap: 23px;
 }
 
-@media (max-width: 991px) {
-  .div-38 {
-    margin-top: 40px;
-  }
-}
-
 .div-39 {
   border-radius: 13px;
   background-color: rgba(239, 224, 180, 1);
@@ -705,8 +606,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 51px;
-  height: 51px;
+  width: 36px;
+  height: 50px;
   padding: 0 10px;
 }
 
@@ -727,25 +628,12 @@
 .div-40 {
   border-radius: 20px;
   background: var(--white, #fff);
-  box-shadow: 0px 100px 80px 0px rgba(0, 0, 0, 0.02),
-    0px 64.815px 46.852px 0px rgba(0, 0, 0, 0.02),
-    0px 38.519px 25.481px 0px rgba(0, 0, 0, 0.01),
-    0px 20px 13px 0px rgba(0, 0, 0, 0.01),
-    0px 8.148px 6.519px 0px rgba(0, 0, 0, 0.01),
-    0px 1.852px 3.148px 0px rgba(0, 0, 0, 0);
   background-color: var(--white, #fff);
   display: flex;
   justify-content: center;
-  margin-left: 80px;
   padding: 30px;
   width: 350px;
   max-height: 300px;
-}
-
-@media (max-width: 991px) {
-  .div-40 {
-    padding: 0 20px;
-  }
 }
 
 .img-17 {
@@ -766,27 +654,11 @@
   font: 800 45px/1 Rubik, sans-serif;
 }
 
-@media (max-width: 991px) {
-  .students-life-made-easy {
-    max-width: 100%;
-    margin-top: 40px;
-    font-size: 40px;
-  }
-}
-
 .order-delivery-section {
   display: flex;
   gap: 20px;
   margin-top: 65px;
   max-width: 100%;
-}
-
-@media (max-width: 991px) {
-  .order-delivery-section {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
 }
 
 .order-info {
@@ -808,12 +680,6 @@
   font-weight: 700;
   line-height: 1.4;
   margin-top: 30px;
-}
-
-@media (max-width: 991px) {
-  .heading-2 {
-    font-size: 40px;
-  }
 }
 
 .vendor-info {
@@ -850,12 +716,6 @@
   max-width: 100%;
 }
 
-@media (max-width: 991px) {
-  .screen-img {
-    margin-top: 40px;
-  }
-}
-
 .div-45 {
   background-color: rgba(239, 224, 180, 1);
   width: 1550px;
@@ -865,15 +725,6 @@
   font: 800 50px 'Plus Jakarta Sans', -apple-system, Roboto, Helvetica, sans-serif;
   margin-top: 138px;
   margin-left: -134px;
-}
-
-@media (max-width: 991px) {
-  .div-45 {
-    margin-top: 40px;
-    font-size: 40px;
-    padding: 0;
-    /* No padding on smaller screens */
-  }
 }
 
 .div-46 {
@@ -892,18 +743,6 @@
   margin-right: 0;
   color: #EB0029;
 }
-
-@media (max-width: 991px) {
-
-  .heading-3,
-  .heading-4 {
-    font-size: 40px;
-    margin: 0;
-    /* Remove margin on smaller screens */
-  }
-}
-
-
 
 .div-47 {
   display: flex;
@@ -1108,39 +947,12 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-@media (max-width: 991px) {
-  .testimonials-header {
-    font-size: 32px;
-    margin-top: 20px;
-  }
-
-  .testimonial-card {
-    margin-top: 20px;
-    padding: 20px;
-  }
-
-  .testimonial-text {
-    font-size: 12px;
-  }
-
-  .testimonial-img {
-    width: 80px;
-  }
-}
-
 .heading-5 {
-  color: var(--3rd, #14183e);
+  color: var(--3rd, #EB0029);
   text-align: center;
   margin: 121px 0 0 0;
-  font: 800 50px Plus Jakarta Sans, -apple-system, Roboto, Helvetica, sans-serif;
-}
+  font: 800 32px Plus Jakarta Sans, -apple-system, Roboto, Helvetica, sans-serif;
 
-@media (max-width: 991px) {
-  .heading-5 {
-    max-width: 100%;
-    margin-top: 40px;
-    font-size: 40px;
-  }
 }
 
 .reviews-container {
@@ -1233,23 +1045,17 @@
 }
 
 .heading-6 {
+  text-align: center;
+  margin: 0px;
   color: var(--3rd, #EB0029);
-  align-self: start;
   margin: 121px 0 0 27px;
   font: 800 50px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 
-@media (max-width: 991px) {
-  .heading-6 {
-    max-width: 100%;
-    margin-top: 40px;
-    font-size: 40px;
-  }
-}
-
 .testimonial-card1 {
   display: flex;
+  flex-direction: column;
   background-color: #F1E8C8;
   padding: 20px;
   border-radius: 8px;
@@ -1257,6 +1063,7 @@
   max-width: 600px;
   margin-top: 30px;
   margin-left: 250px;
+  align-items: center;
 }
 
 .testimonial-image1 {
@@ -1264,23 +1071,24 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 20px;
   border: 3px solid #a52a2a;
 }
 
 .testimonial-content1 {
   max-width: 600px;
-
+  text-align: center;
+  max-width: fit-content;
 }
 
 .testimonial-text1 {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;
   color: #000;
   margin-bottom: 15px;
 }
 
 .testimonial-stars1 {
+  justify-content: center;
   display: flex;
   margin-bottom: 10px;
 }
@@ -1303,7 +1111,6 @@
   color: #252b42;
 }
 
-
 .div-67 {
   display: flex;
   margin-top: 60px;
@@ -1316,21 +1123,6 @@
   flex-wrap: wrap;
   font: 700 18px/22px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
     sans-serif;
-}
-
-@media (max-width: 991px) {
-  .div-67 {
-    margin-top: 40px;
-  }
-}
-
-.value-9 {
-  border-radius: 0px 0px 0px 0px;
-  display: flex;
-  min-width: 240px;
-  gap: 23px;
-  flex-grow: 1;
-  width: 202px;
 }
 
 .img-76 {
@@ -1397,14 +1189,6 @@
   position: relative;
 }
 
-@media (max-width: 991px) {
-  .content-wrapper {
-    flex-direction: column;
-    padding-left: 20px;
-    margin-top: 40px;
-  }
-}
-
 .text-section {
   display: flex;
   flex-direction: column;
@@ -1421,13 +1205,6 @@
   color: rgba(1, 15, 28, 1);
   font: 700 46px/60px Rubik, sans-serif;
   margin-top: 25px;
-}
-
-@media (max-width: 991px) {
-  .headline {
-    font-size: 40px;
-    line-height: 59px;
-  }
 }
 
 .description {
@@ -1479,11 +1256,8 @@
   z-index: 1;
 }
 
-@media (max-width: 991px) {
-  .phone-img {
-    margin-top: 40px;
-  }
-}
+/* About Us Section */
+
 
 .contact-container {
   display: flex;
@@ -1527,7 +1301,6 @@
   font-size: 24px;
 }
 
-/* About Us Section */
 .about-us {
   font-size: 28px;
   font-weight: bold;
@@ -1567,18 +1340,1960 @@
   text-decoration: underline;
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
+
+/* Responsive */
+
+/* Desktop */
+
+@media screen and (max-width: 991px) {
+  .div {
+    max-width: 100%;
+  }
+
+  .div-3 {
+    white-space: initial;
+  }
+
+  .div-4 {
+    white-space: initial;
+  }
+
+  .div-5 {
+    white-space: initial;
+  }
+
+  .div-10 {
+    flex-direction: column-reverse;
+    justify-content: center;
+
+  }
+
+  .column {
+    width: 100%;
+    margin-top: -16px;
+  }
+
+  .div-11 {
+    max-width: 100%;
+    align-self: center;
+  }
+
+  .indias-first-hyper-local-delivery-startup-for-educational-campuseses {
+    max-width: 100%;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    
+  }
+
+  .div-12 {
+    margin-right: 10px;
+  }
+
+  .div-13 {
+    display: flex;
+    justify-content: center;
+    gap: 05px;
+    flex-direction: row;
+    margin-top: 20px
+  }
+
+  .btn-google {
+    padding: 15px 16px 5px 40px;
+    width: 60px;
+    font-size: 14px;
+    font-weight: 600
+  }
+
+  .btn-google:before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn-google:after {
+    top: 2px;
+  }
+
+  .btn-appstore {
+    padding: 15px 16px 5px 40px;
+    width: 60px;
+    font-size: 14px;
+    font-weight: 600
+  }
+
+  .btn-appstore:before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn-appstore:after {
+    top: 2px;
+  }
+
+  .column-2 {
+    width: 100%;
+  }
+
+  .img-4 {
+    padding-top: 30px;
+    align-self: center;
+    width: 250px;
+    height: 250px;
+  }
+
+  .number-section {
+    display: flex;
+    max-width: fit-content;
+    align-self: center;
+    gap: 20px;
+    margin-top: 22px;
+    background-color: #FAEA7B;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .number-item {
+    padding: 06px;
+  }
+
+  .div-101 {
+    margin-top: -60px;
+
+  }
+
+  .div-16,
+  .div-17,
+  .div-18 {
+    margin-top: 40px;
+  }
+
+  .service-name {
+    font-size: 24px;
+  }
+
+  .service-wrapper,
+  .features-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-column,
+  .feature-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .what-we-serve {
+    font-size: 40px;
+    font-weight: 800;
+  }
+
+  .feature-title {
+    font-size: 26px;
+  }
+
+  .feature-description1 {
+    font-size: 20px;
+  }
+
+  .div-103 {
+    width: 100%;
+    padding-top: 148px;
+
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 40px;
+    margin-top: -100px;
+  }
+
+  .div-33 {
+    width: auto;
+    margin-left: 0px;
+
+  }
+
+  .div-34 {
+    margin-top: 20px;
+
+  }
+
+  .div-35 {
+    align-items: center;
+
+
+  }
+
+  .div-36 {
+    margin-top: 40px;
+
+  }
+
+  .div-38 {
+    margin-top: 40px;
+
+  }
+
+  .div-40 {
+    border-radius: 20px;
+    background: var(--white, #fff);
+    background-color: var(--white, #fff);
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    width: 350px;
+    max-height: 300px;
+  }
+
+  .img-17 {
+    aspect-ratio: 1.16;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #F1E8C8;
+  }
+
+
+  .students-life-made-easy {
+    max-width: 100%;
+    margin-top: -10px;
+    font-size: 40px;
+
+  }
+
+  .order-delivery-section {
+    width: fit-content;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .order-text {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .heading-2 {
+    color: #252b42;
+    font-size: 34px;
+    width: auto;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: 0px;
+  }
+
+  .app-screen {
+    margin: 0px;
+  }
+
+  .screen-img {
+    margin-top: 40px;
+  }
+
+  .div-45 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 0px;
+    width: auto;
+    margin-top: 40px;
+    font-size: 20px;
+    padding: 20px 0;
+  }
+
+  .heading-3,
+  .heading-4 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .div-48 {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    gap: 40px 28px;
+    flex-wrap: wrap;
+  }
+
+  .div-49 {
+    display: flex;
+    margin-top: 40px;
+    gap: 10px 30px;
+    font: 700 18px 'Plus Jakarta Sans', sans-serif;
+    color: #5e6282;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .value,
+  .value-2,
+  .div-50 {
+    width: auto;
+    display: flex;
+    gap: 0px;
+  }
+
+  .img-27,
+  .img-28,
+  .img-29 {
+    width: 36px;
+  }
+
+  .zero-bugs,
+  .zero-delays,
+  .zero-worries {
+    justify-content: center;
+    font-size: 14px;
+    margin: 04px;
+    color: #000;
+  }
+
+  .nationwide {
+    margin-top: -20px;
+    min-height: 80vh;
+  }
+
+  .nationwide-heading {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  .nationwide-heading h1 {
+    color: #EB0029;
+    margin-top: 120px;
+    font: 800 32px/1 Rubik, sans-serif;
+    line-height: 1.4;
+  }
+
+  .nationwide-section {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    min-height: 390px;
+  }
+
+  .nationwide-text {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  .college-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .college-item {
+    display: flex;
+    align-self: center;
+    margin-bottom: 50px;
+  }
+
+  .college-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #F1E8C8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-right: 15px;
+  }
+
+  .college-name {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #000;
+  }
+
+  .map-image {
+    flex: 1;
+    text-align: center;
+  }
+
+  .map-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nationwide-text {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .college-list {
+    flex-basis: 45%;
+    margin-bottom: 0;
+  }
+
+  .testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .testimonials-header {
+    font-size: 32px;
+    margin-top: 10px;
+  }
+
+  .testimonial-card {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 40px;
+  }
+
+  .testimonial-card1 {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1E8C8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+    margin: 40px;
+    align-items: center;
+  }
+
+  .testimonial-text {
+    font-size: 16px;
+  }
+
+  .testimonial-img {
+    width: 80px;
+  }
+
+  .heading-5 {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 40px;
+  }
+
+  .review-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+
+  .review-text {
+    font-size: 16px;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .star-img {
+    width: 20px;
+  }
+
+  .review-author,
+  .review-shop {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--TEXT-CLR, #252b42);
+    text-align: center;
+  }
+
+  .values-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .value {
+    display: flex;
+    align-items: start;
+    gap: 23px;
+    max-width: 300px;
+  }
+
+  .value-img {
+    width: 49px;
+    height: 49px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .value-text {
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .heading-6 {
+    color: var(--3rd, #EB0029);
+    align-self: start;
+    margin: 121px 0 0 27px;
+    font: 800 32px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
+      sans-serif;
+  }
+
+  .heading-6 {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 32px;
+  }
+
+  .values-container1 {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .value1 {
+    display: flex;
+    align-items: start;
+    gap: 23px;
+    width: 300px;
+  }
+
+
+  .value-text1 {
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .div-67 {
+    margin-top: 40px;
+  }
+
+  .content-wrapper {
+    border-radius: 30px;
+    background-color: rgba(255, 221, 204, 0.25);
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1078px;
+    padding: 83px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    text-align: center;
+  }
+
+  .text-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .app-header {
+    color: rgba(235, 0, 41, 1);
+    font-weight: 600;
+    letter-spacing: 2.88px;
+  }
+
+  .headline {
+    color: rgba(1, 15, 28, 1);
+    font: 700 32px/60px Rubik, sans-serif;
+    margin-top: 25px;
+    line-height: 59px;
+  }
+
+  .description {
+    color: #252b42;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 48px;
+    line-height: 30px;
+  }
+
+  .cta-button {
+    align-self: center;
+    border-radius: 50px;
+    background-color: rgba(235, 0, 41, 1);
+    color: white;
+    padding: 23px 40px;
+    margin-top: 45px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .image-section {
+    margin: 0px;
+    display: flex;
+  }
+
+  .food-container {
+    display: none;
+  }
+
+
   .contact-container {
+    display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    width: auto;
+    margin: 0 auto;
+    padding: 20px 0;
+    flex-wrap: wrap;
   }
 
   .branding,
   .about-us-section,
   .contact-info {
-    flex: 1 1 100%;
-    margin: 10px 0;
+    flex: 1 1 30%;
+    margin: 0 20px;
+    text-align: center;
   }
+
+  /* Branding Section */
+  .quick-verse-2 {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+
+  .about-us {
+    font-size: 32px;
+    margin-top: 24px;
+  }
+
+  .about-description {
+    font-size: 18px;
+  }
+
+  /* Contact Section */
+  .get-in-touch {
+    font-size: 32px;
+    margin-top: 24px;
+  }
+
+  .contact-details,
+  .email {
+    font-size: 18px;
+  }
+
 }
 
+/* Tablet */
+@media screen and (max-width: 767px) {
+  .div {
+    max-width: 100%;
+  }
+
+  .div-3 {
+    white-space: initial;
+  }
+
+  .div-4 {
+    white-space: initial;
+  }
+
+  .div-5 {
+    white-space: initial;
+  }
+
+  .div-10 {
+    flex-direction: column-reverse;
+    justify-content: center;
+
+  }
+
+  .column {
+    width: 100%;
+    margin-top: -16px;
+  }
+
+  .div-11 {
+    max-width: 100%;
+  }
+
+  .indias-first-hyper-local-delivery-startup-for-educational-campuseses {
+    max-width: 100%;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .div-12 {
+    margin-right: 10px;
+  }
+
+  .div-13 {
+    display: flex;
+    justify-content: center;
+    gap: 05px;
+    flex-direction: row;
+    margin-top: 20px
+  }
+
+  .btn-google {
+    padding: 15px 16px 5px 40px;
+    width: 60px;
+    font-size: 14px;
+    font-weight: 600
+  }
+
+  .btn-google:before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn-google:after {
+    top: 2px;
+  }
+
+  .btn-appstore {
+    padding: 15px 16px 5px 40px;
+    width: 60px;
+    font-size: 14px;
+    font-weight: 600
+  }
+
+  .btn-appstore:before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn-appstore:after {
+    top: 2px;
+  }
+
+  .column-2 {
+    width: 100%;
+  }
+
+  .img-4 {
+    padding-top: 30px;
+    align-self: center;
+    width: 250px;
+    height: 250px;
+  }
+
+  .number-section {
+    display: flex;
+    max-width: fit-content;
+    align-items: center;
+    gap: 20px;
+    margin-top: 22px;
+    background-color: #FAEA7B;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .number-item {
+    padding: 06px;
+  }
+
+  .div-101 {
+    margin-top: -60px;
+
+  }
+
+  .div-16,
+  .div-17,
+  .div-18 {
+    margin-top: 40px;
+  }
+
+  .service-name {
+    font-size: 24px;
+  }
+
+  .service-wrapper,
+  .features-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-column,
+  .feature-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .what-we-serve {
+    font-size: 40px;
+    font-weight: 800;
+  }
+
+  .feature-title {
+    font-size: 26px;
+  }
+
+  .feature-description1 {
+    font-size: 20px;
+  }
+
+  .div-103 {
+    width: 100%;
+    padding-top: 148px;
+
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 40px;
+    margin-top: -100px;
+  }
+
+  .div-33 {
+    width: auto;
+    margin-left: 0px;
+
+  }
+
+  .div-34 {
+    margin-top: 20px;
+
+  }
+
+  .div-35 {
+    align-items: center;
+
+
+  }
+
+  .div-36 {
+    margin-top: 40px;
+
+  }
+
+  .div-38 {
+    margin-top: 40px;
+
+  }
+
+  .div-40 {
+    border-radius: 20px;
+    background: var(--white, #fff);
+    background-color: var(--white, #fff);
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    width: 350px;
+    max-height: 300px;
+  }
+
+  .img-17 {
+    aspect-ratio: 1.16;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #F1E8C8;
+  }
+
+
+  .students-life-made-easy {
+    max-width: 100%;
+    margin-top: -10px;
+    font-size: 40px;
+
+  }
+
+  .order-delivery-section {
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .order-text {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .heading-2 {
+    color: #252b42;
+    font-size: 34px;
+    width: auto;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: 0px;
+  }
+
+  .app-screen {
+    margin: 0px;
+  }
+
+  .screen-img {
+    margin-top: 40px;
+  }
+
+  .div-45 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 0px;
+    width: auto;
+    margin-top: 40px;
+    font-size: 20px;
+    padding: 20px 0;
+  }
+
+  .heading-3,
+  .heading-4 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .div-48 {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    gap: 40px 28px;
+    flex-wrap: wrap;
+  }
+
+  .div-49 {
+    display: flex;
+    margin-top: 40px;
+    gap: 10px 30px;
+    font: 700 18px 'Plus Jakarta Sans', sans-serif;
+    color: #5e6282;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .value,
+  .value-2,
+  .div-50 {
+    width: auto;
+    display: flex;
+    gap: 0px;
+  }
+
+  .img-27,
+  .img-28,
+  .img-29 {
+    width: 36px;
+  }
+
+  .zero-bugs,
+  .zero-delays,
+  .zero-worries {
+    justify-content: center;
+    font-size: 14px;
+    margin: 04px;
+    color: #000;
+  }
+
+  .nationwide {
+    margin-top: -20px;
+    min-height: 80vh;
+  }
+
+  .nationwide-heading {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  .nationwide-heading h1 {
+    color: #EB0029;
+    margin-top: 120px;
+    font: 800 32px/1 Rubik, sans-serif;
+    line-height: 1.4;
+  }
+
+  .nationwide-section {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    min-height: 390px;
+  }
+
+  .nationwide-text {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  .college-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .college-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .college-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #F1E8C8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-right: 15px;
+  }
+
+  .college-name {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #000;
+  }
+
+  .map-image {
+    flex: 1;
+    text-align: center;
+  }
+
+  .map-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nationwide-text {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .college-list {
+    flex-basis: 45%;
+    margin-bottom: 0;
+  }
+
+  .testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .testimonials-header {
+    font-size: 32px;
+    margin-top: 10px;
+  }
+
+  .testimonial-card {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 40px;
+  }
+
+  .testimonial-card1 {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1E8C8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+    margin: 40px;
+    align-items: center;
+  }
+
+  .testimonial-text {
+    font-size: 16px;
+  }
+
+  .testimonial-img {
+    width: 80px;
+  }
+
+  .heading-5 {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 40px;
+  }
+
+  .review-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+
+  .review-text {
+    font-size: 16px;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .star-img {
+    width: 20px;
+  }
+
+  .review-author,
+  .review-shop {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--TEXT-CLR, #252b42);
+    text-align: center;
+  }
+
+  .values-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .value {
+    display: flex;
+    align-items: start;
+    gap: 23px;
+    max-width: 300px;
+  }
+
+  .value-img {
+    width: 49px;
+    height: 49px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .value-text {
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .heading-6 {
+    color: var(--3rd, #EB0029);
+    align-self: start;
+    margin: 121px 0 0 27px;
+    font: 800 32px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
+      sans-serif;
+  }
+
+  .heading-6 {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 32px;
+  }
+
+  .values-container1 {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .value1 {
+    display: flex;
+    align-items: start;
+    gap: 23px;
+    width: 300px;
+  }
+
+
+  .value-text1 {
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .div-67 {
+    margin-top: 40px;
+  }
+
+  .content-wrapper {
+    border-radius: 30px;
+    background-color: rgba(255, 221, 204, 0.25);
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1078px;
+    padding: 83px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    text-align: center;
+  }
+
+  .text-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .app-header {
+    color: rgba(235, 0, 41, 1);
+    font-weight: 600;
+    letter-spacing: 2.88px;
+  }
+
+  .headline {
+    color: rgba(1, 15, 28, 1);
+    font: 700 32px/60px Rubik, sans-serif;
+    margin-top: 25px;
+    line-height: 59px;
+  }
+
+  .description {
+    color: #252b42;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 48px;
+    line-height: 30px;
+  }
+
+  .cta-button {
+    align-self: center;
+    border-radius: 50px;
+    background-color: rgba(235, 0, 41, 1);
+    color: white;
+    padding: 23px 40px;
+    margin-top: 45px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .image-section {
+    margin: 0px;
+    display: flex;
+  }
+
+  .food-container {
+    display: none;
+  }
+
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: auto;
+    margin: 0 auto;
+    padding: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .branding,
+  .about-us-section,
+  .contact-info {
+    flex: 1 1 30%;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  /* Branding Section */
+  .quick-verse-2 {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+
+  .about-us {
+    font-size: 32px;
+    margin-top: 24px;
+  }
+
+  .about-description {
+    font-size: 18px;
+  }
+
+  /* Contact Section */
+  .get-in-touch {
+    font-size: 32px;
+    margin-top: 24px;
+  }
+
+  .contact-details,
+  .email {
+    font-size: 18px;
+  }
+
+
+}
+
+/* Mobile */
+@media screen and (max-width: 479px) {
+  .div {
+    max-width: 100%;
+  }
+
+  .div-3 {
+    white-space: initial;
+  }
+
+  .div-4 {
+    white-space: initial;
+  }
+
+  .div-5 {
+    white-space: initial;
+  }
+
+  .div-10 {
+    flex-direction: column-reverse;
+    justify-content: center;
+
+  }
+
+  .column {
+    width: 100%;
+    margin-top: -16px;
+  }
+
+  .div-11 {
+    max-width: 100%;
+  }
+
+  .indias-first-hyper-local-delivery-startup-for-educational-campuseses {
+    max-width: 100%;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .div-12 {
+    margin-right: 10px;
+  }
+
+  .div-13 {
+    display: flex;
+    justify-content: center;
+    gap: 05px;
+    flex-direction: row;
+    margin-top: 20px
+  }
+
+  .btn-google {
+    padding: 15px 16px 5px 40px;
+    width: 60px;
+    font-size: 14px;
+    font-weight: 600
+  }
+
+  .btn-google:before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn-google:after {
+    top: 2px;
+  }
+
+  .btn-appstore {
+    padding: 15px 16px 5px 40px;
+    width: 60px;
+    font-size: 14px;
+    font-weight: 600
+  }
+
+  .btn-appstore:before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn-appstore:after {
+    top: 2px;
+  }
+
+  .column-2 {
+    width: 100%;
+  }
+
+  .img-4 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .number-section {
+    display: flex;
+    max-width: fit-content;
+    align-items: center;
+    gap: 20px;
+    margin-top: 22px;
+    background-color: #FAEA7B;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .number-item {
+    padding: 06px;
+  }
+
+  .div-101 {
+    margin-top: -60px;
+
+  }
+
+  .div-16,
+  .div-17,
+  .div-18 {
+    margin-top: 40px;
+  }
+
+  .service-name {
+    font-size: 24px;
+  }
+
+  .service-wrapper,
+  .features-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-column,
+  .feature-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .what-we-serve {
+    font-size: 40px;
+    font-weight: 800;
+  }
+
+  .feature-title {
+    font-size: 26px;
+  }
+
+  .feature-description1 {
+    font-size: 20px;
+  }
+
+  .div-103 {
+    width: 100%;
+    padding-top: 148px;
+
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 40px;
+    margin-top: -100px;
+  }
+
+  .div-33 {
+    width: auto;
+    margin-left: 0px;
+
+  }
+
+  .div-34 {
+    margin-top: 20px;
+
+  }
+
+  .div-35 {
+    align-items: center;
+
+
+  }
+
+  .div-36 {
+    margin-top: 40px;
+
+  }
+
+  .div-38 {
+    margin-top: 40px;
+
+  }
+
+  .div-40 {
+    border-radius: 20px;
+    background: var(--white, #fff);
+    background-color: var(--white, #fff);
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    width: 350px;
+    max-height: 300px;
+  }
+
+  .img-17 {
+    aspect-ratio: 1.16;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #F1E8C8;
+  }
+
+
+  .students-life-made-easy {
+    max-width: 100%;
+    margin-top: -10px;
+    font-size: 40px;
+
+  }
+
+  .order-delivery-section {
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .order-text {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .heading-2 {
+    color: #252b42;
+    font-size: 34px;
+    width: auto;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: 0px;
+  }
+
+  .app-screen {
+    margin: 0px;
+  }
+
+  .screen-img {
+    margin-top: 40px;
+  }
+
+  .div-45 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 0px;
+    width: auto;
+    margin-top: 40px;
+    font-size: 20px;
+    padding: 20px 0;
+  }
+
+  .heading-3,
+  .heading-4 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .div-48 {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    gap: 40px 28px;
+    flex-wrap: wrap;
+  }
+
+  .div-49 {
+    display: flex;
+    margin-top: 40px;
+    gap: 10px 30px;
+    font: 700 18px 'Plus Jakarta Sans', sans-serif;
+    color: #5e6282;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .value,
+  .value-2,
+  .div-50 {
+    width: auto;
+    display: flex;
+    gap: 0px;
+  }
+
+  .img-27,
+  .img-28,
+  .img-29 {
+    width: 36px;
+  }
+
+  .zero-bugs,
+  .zero-delays,
+  .zero-worries {
+    justify-content: center;
+    font-size: 14px;
+    margin: 04px;
+    color: #000;
+  }
+
+  .nationwide {
+    margin-top: -20px;
+    min-height: 80vh;
+  }
+
+  .nationwide-heading {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  .nationwide-heading h1 {
+    color: #EB0029;
+    margin-top: 120px;
+    font: 800 32px/1 Rubik, sans-serif;
+    line-height: 1.4;
+  }
+
+  .nationwide-section {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    min-height: 390px;
+  }
+
+  .nationwide-text {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  .college-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .college-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .college-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #F1E8C8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-right: 15px;
+  }
+
+  .college-name {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #000;
+  }
+
+  .map-image {
+    flex: 1;
+    text-align: center;
+  }
+
+  .map-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nationwide-text {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .college-list {
+    flex-basis: 45%;
+    margin-bottom: 0;
+  }
+
+  .testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .testimonials-header {
+    font-size: 32px;
+    margin-top: 10px;
+  }
+
+  .testimonial-card {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 40px;
+  }
+
+  .testimonial-card1 {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1E8C8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+    margin: 40px;
+    align-items: center;
+  }
+
+  .testimonial-text {
+    font-size: 16px;
+  }
+
+  .testimonial-img {
+    width: 80px;
+  }
+
+  .heading-5 {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 40px;
+  }
+
+  .review-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+
+  .review-text {
+    font-size: 16px;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .star-img {
+    width: 20px;
+  }
+
+  .review-author,
+  .review-shop {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--TEXT-CLR, #252b42);
+    text-align: center;
+  }
+
+  .values-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .value {
+    display: flex;
+    align-items: start;
+    gap: 23px;
+    max-width: 300px;
+  }
+
+  .value-img {
+    width: 49px;
+    height: 49px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .value-text {
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .heading-6 {
+    color: var(--3rd, #EB0029);
+    align-self: start;
+    margin: 121px 0 0 27px;
+    font: 800 32px Plus Jakarta Sans, -apple-system, Roboto, Helvetica,
+      sans-serif;
+  }
+
+  .heading-6 {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 32px;
+  }
+
+  .values-container1 {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .value1 {
+    display: flex;
+    align-items: start;
+    gap: 23px;
+    width: 300px;
+  }
+
+
+  .value-text1 {
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .div-67 {
+    margin-top: 40px;
+  }
+
+  .content-wrapper {
+    border-radius: 30px;
+    background-color: rgba(255, 221, 204, 0.25);
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1078px;
+    padding: 83px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    text-align: center;
+  }
+
+  .text-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .app-header {
+    color: rgba(235, 0, 41, 1);
+    font-weight: 600;
+    letter-spacing: 2.88px;
+  }
+
+  .headline {
+    color: rgba(1, 15, 28, 1);
+    font: 700 32px/60px Rubik, sans-serif;
+    margin-top: 25px;
+    line-height: 59px;
+  }
+
+  .description {
+    color: #252b42;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 48px;
+    line-height: 30px;
+  }
+
+  .cta-button {
+    align-self: center;
+    border-radius: 50px;
+    background-color: rgba(235, 0, 41, 1);
+    color: white;
+    padding: 23px 40px;
+    margin-top: 45px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .image-section {
+    margin: 0px;
+    display: flex;
+  }
+
+  .food-container {
+    display: none;
+  }
+
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: auto;
+    margin: 0 auto;
+    padding: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .branding,
+  .about-us-section,
+  .contact-info {
+    flex: 1 1 30%;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  /* Branding Section */
+  .quick-verse-2 {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+
+  .about-us {
+    font-size: 32px;
+    margin-top: 24px;
+  }
+
+  .about-description {
+    font-size: 18px;
+  }
+
+  /* Contact Section */
+  .get-in-touch {
+    font-size: 32px;
+    margin-top: 24px;
+  }
+
+  .contact-details,
+  .email {
+    font-size: 18px;
+  }
+
+}
